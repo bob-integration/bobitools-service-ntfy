@@ -1,0 +1,21 @@
+{
+  "license": "GPL-3.0-or-later",
+  "id": "ntfy",
+  "label": "Notifications (ntfy)",
+  "version": "0.1.0",
+  "description": "Serveur de notifications push auto-hébergé (ntfy) — les outils poussent des alertes vers les téléphones/navigateurs sur le LAN/VPN.",
+  "settings_keys": {
+    "ntfy_enabled":        { "type": "bool", "default": false },
+    "ntfy_image":          { "type": "str",  "default": "binwiederhier/ntfy:latest" },
+    "ntfy_port":           { "type": "int",  "default": 2586 },
+    "ntfy_bind":           { "type": "str",  "default": "0.0.0.0" },
+    "ntfy_base_url":       { "type": "str",  "default": "" },
+    "ntfy_default_topic":  { "type": "str",  "default": "bobitools" },
+    "ntfy_default_access": { "type": "str",  "default": "deny-all" },
+    "ntfy_admin_user":     { "type": "str",  "default": "bobi" },
+    "ntfy_admin_pass":     { "type": "str",  "default": "" },
+    "ntfy_publish_token":  { "type": "str",  "default": "" },
+    "ntfy_token":          { "type": "str",  "default": "" },
+    "ntfy_timeout":        { "type": "int",  "default": 10 }
+  }
+}

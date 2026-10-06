@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0",
+  "published_at": "2026-08-29",
+  "changes": {
+    "Nouveautés": [
+      "Service global de notifications PUSH auto-hébergées : héberge un serveur ntfy (conteneur Docker) et permet aux outils de pousser des alertes vers les téléphones/navigateurs abonnés (LAN/VPN).",
+      "Le service gère le conteneur ntfy (pull/run/stop) et le publie sur un port fixe du LAN ; auth activée (deny-all par défaut), utilisateur admin provisionné automatiquement + token de publication créé côté ntfy.",
+      "Publication asynchrone (file + worker), best-effort ; résultat journalisé en audit. Bouton « Envoyer un test » synchrone.",
+      "Accès outils : helper in-process ctx.notify(message, topic=..., title=..., priority=..., tags=...) + route HTTP /api/ntfy/publish protégée par token partagé (outils Docker).",
+      "Réglages → Notifications : activation, image, port/interface, URL publique, topic par défaut, accès par défaut (deny-all / read-only), identifiants admin ; secrets masqués. Serveur ntfy sous licence Apache-2.0/GPLv2 (cf. ATTRIBUTION.md), lancé en agrégation."
+    ],
+    "Corrections": [],
+    "Bugs connus": [
+      "Abonnement des téléphones : en deny-all, chaque abonné utilise le compte admin (ou un compte créé à la main dans le conteneur) ; la gestion d'utilisateurs par personne viendra plus tard.",
+      "Exposition Internet non gérée (LAN/VPN uniquement) : pas de TLS/reverse-proxy intégré pour l'instant."
+    ]
+  }
+}
